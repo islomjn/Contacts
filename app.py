@@ -57,7 +57,7 @@ async def get_one_contact(request, id):
 
 async def delete_contact(request, id):
     data = await request.json()
-    query = contacts.delete().where(contacts["id"==id]).values(
+    query = contacts.delete().where(contacts["id"]==id).values(
         name=data["name"],
         number=data["number"]
     )
@@ -70,7 +70,7 @@ async def delete_contact(request, id):
 
 async def update_contact(request, id):
     data = await request.json()
-    query = contacts.update().where(contacts["id"==id]).values(
+    query = contacts.update().where(contacts["id"]==id).values(
         name=data["name"],
         number=data["number"]
     )
